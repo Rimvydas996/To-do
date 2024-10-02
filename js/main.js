@@ -20,7 +20,7 @@ document.getElementById("filterByStatus").addEventListener("change", () => {
   printAllTasks();
 });
 
-document.getElementById("searchButton").addEventListener("click", () => {
+document.getElementById("taskSearchInput").addEventListener("input", () => {
   searchFor = document.getElementById("taskSearchInput").value;
 
   printAllTasks();
@@ -42,14 +42,3 @@ function handleCreateTask() {
 }
 
 printUser();
-
-// fetch("https://jsonplaceholder.typicode.com/users/3")
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     document.getElementById("user").textContent = data.name;
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
