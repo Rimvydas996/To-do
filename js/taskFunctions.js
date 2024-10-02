@@ -13,17 +13,15 @@ function printAllTasks() {
 
   data.tasks
     .filter((singleTask) => {
-      if (filterStatus === "all" || !filterStatus) return true;
+      const statusMatch =
+        filterStatus === "all" ||
+        !filterStatus ||
+        singleTask.status === filterStatus;
+      const searchMatch =
+        !searchFor ||
+        singleTask.title.toLowerCase().includes(searchFor.toLowerCase());
 
-      return singleTask.status === filterStatus;
-    })
-
-    // filtruoja pagal paieskos lauka
-
-    .filter((singleTask) => {
-      if (!searchFor) return true;
-
-      return singleTask.title.toLowerCase().includes(searchFor.toLowerCase());
+      return statusMatch && searchMatch;
     })
     .forEach((task) => {
       printSingleTask(task, printAllTasks);
