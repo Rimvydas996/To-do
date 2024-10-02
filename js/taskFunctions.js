@@ -17,6 +17,9 @@ function printAllTasks() {
 
       return singleTask.status === filterStatus;
     })
+
+    // filtruoja pagal paieskos lauka
+
     .filter((singleTask) => {
       if (!searchFor) return true;
 
