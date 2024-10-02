@@ -20,7 +20,7 @@ document.getElementById("filterByStatus").addEventListener("change", () => {
   printAllTasks();
 });
 
-document.getElementById("searchButton").addEventListener("click", () => {
+document.getElementById("taskSearchInput").addEventListener("input", () => {
   searchFor = document.getElementById("taskSearchInput").value;
 
   printAllTasks();
