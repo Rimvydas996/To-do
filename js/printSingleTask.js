@@ -9,11 +9,16 @@ function printSingleTask(task, printAllTasks) {
   const buttonsContainer = document.createElement("div");
   const statusButton = document.createElement("button");
   const deleteButton = document.createElement("button");
+  const taskCreatedAt = document.createElement("p");
+
+  const date = new Date(task.createdAt).toLocaleString();
 
   const statusButtonLabel = getStatusButtonLabel(task.status);
   taskLi.textContent = task.title;
   statusButton.textContent = statusButtonLabel;
   deleteButton.textContent = "Delete";
+  taskCreatedAt.textContent = date;
+  console.log(task.createdAt);
 
   // add styles
   taskLi.classList.add("task");
@@ -44,6 +49,7 @@ function printSingleTask(task, printAllTasks) {
     buttonsContainer.appendChild(statusButton);
   }
   buttonsContainer.appendChild(deleteButton);
+  taskLi.appendChild(taskCreatedAt);
   taskLi.appendChild(buttonsContainer);
   document.getElementById("tasksList").appendChild(taskLi);
 }

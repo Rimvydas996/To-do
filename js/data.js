@@ -39,6 +39,9 @@ export const data = {
       id: crypto.randomUUID(),
       title: title,
       status: "created",
+      createdAt: new Date().getTime(),
+
+      // new Date().getTime(),
     });
     this.setTasks();
 
