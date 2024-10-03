@@ -3,6 +3,7 @@ import { data } from "./data.js";
 import { printUser } from "./printUser.js";
 
 export let filterStatus = "all";
+export let sortStatus = "newest";
 export let searchFor = "";
 
 document.getElementById("createButton").addEventListener("click", () => {
@@ -17,6 +18,11 @@ document.getElementById("newTaskInput").addEventListener("keyup", (event) => {
 
 document.getElementById("filterByStatus").addEventListener("change", () => {
   filterStatus = document.getElementById("filterByStatus").value;
+  printAllTasks();
+});
+
+document.getElementById("sortByDate").addEventListener("change", () => {
+  sortStatus = document.getElementById("sortByDate").value;
   printAllTasks();
 });
 

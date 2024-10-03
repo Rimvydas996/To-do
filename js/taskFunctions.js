@@ -1,5 +1,5 @@
 import { printSingleTask } from "./printSingleTask.js";
-import { filterStatus, searchFor } from "./main.js";
+import { filterStatus, searchFor, sortStatus } from "./main.js";
 import { data } from "./data.js";
 
 function printAllTasks() {
@@ -22,6 +22,14 @@ function printAllTasks() {
         singleTask.title.toLowerCase().includes(searchFor.toLowerCase());
 
       return statusMatch && searchMatch;
+    })
+    .sort((a, b) => {
+      if (sortStatus === "newest") {
+        return b.createdAt - a.createdAt;
+      }
+      if (sortStatus === "oldest") {
+        return a.createdAt - b.createdAt;
+      }
     })
     .forEach((task) => {
       printSingleTask(task, printAllTasks);
