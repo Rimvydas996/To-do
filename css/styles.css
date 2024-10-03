@@ -14,6 +14,10 @@ body {
   border-bottom: 1px solid #1d7484;
   padding: 1rem 0;
 }
+.filter-sort-section {
+  display: flex;
+  gap: 1rem;
+}
 
 ul {
   list-style-type: none;

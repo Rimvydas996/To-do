@@ -18,13 +18,21 @@
 
     <h4 class="subtitle">Your tasks:</h4>
 
-    <label for="filterByStatus">Filter by status:</label>
-    <select id="filterByStatus">
-      <option value="all">All</option>
-      <option value="created">Created</option>
-      <option value="started">Started</option>
-      <option value="completed">Completed</option>
-    </select>
+    <div class="filter-sort-section">
+      <label for="filterByStatus">Filter by status:</label>
+      <select id="filterByStatus">
+        <option value="all">All</option>
+        <option value="created">Created</option>
+        <option value="started">Started</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <label for="sortByDate">Sort by date:</label>
+      <select id="sortByDate">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+    </div>
 
     <ul id="tasksList"></ul>
 
